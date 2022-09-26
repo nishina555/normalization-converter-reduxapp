@@ -12,6 +12,11 @@ const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
+    setInitialTodos(state, action) {
+      const { allIds, byId } = action.payload;
+      state.allIds = allIds;
+      state.byId = byId;
+    },
     addTodo(state, action) {
       const content = action.payload;
       let id = ++nextTodoId;
@@ -31,5 +36,5 @@ const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, toggleTodo } = todosSlice.actions;
+export const { setInitialTodos, addTodo, toggleTodo } = todosSlice.actions;
 export default todosSlice.reducer;
