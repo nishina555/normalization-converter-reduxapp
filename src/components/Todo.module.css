@@ -1,0 +1,10 @@
+.todoItem {
+  font-family: monospace;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+  color: lightgray;
+}
