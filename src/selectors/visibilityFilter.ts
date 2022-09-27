@@ -3,4 +3,4 @@ import { VisibilityFilterTypes } from "../types/state/visibilityFilter";
 
 export const selectVisibilityFilter = (
   state: AppState
-): VisibilityFilterTypes => state.visibilityFilter;
+): VisibilityFilterTypes => state.ui.visibilityFilter;

@@ -11,7 +11,7 @@ import styles from "./VisibilityFilters.module.css";
 const VisibilityFilters: FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const activeFilter: VisibilityFilterTypes = useSelector(
-    (state: AppState) => state.visibilityFilter
+    (state: AppState) => state.ui.visibilityFilter
   );
   return (
     <>
