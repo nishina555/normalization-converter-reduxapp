@@ -9,7 +9,7 @@ import { setInitialTodos } from "../reducers/todosSlice";
 
 const TodoList: FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const todos: Array<TodoEntity> = useSelector(selectTodosByVisibilityFilter);
+  const todos: TodoEntity[] = useSelector(selectTodosByVisibilityFilter);
 
   useEffect(() => {
     const todos = [
