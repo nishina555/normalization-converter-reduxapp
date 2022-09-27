@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TodoState } from "../types/state/todos";
+import { Entities } from "../types/state/base";
+import { TodoEntity } from "../types/state/todos";
 
-const initialState: TodoState = {
+const initialState: Entities<TodoEntity> = {
   allIds: [],
   byId: {},
 };

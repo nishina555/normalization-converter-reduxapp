@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import Todo from "./Todo";
 import { selectTodosByVisibilityFilter } from "../selectors/todo";
-import { TodoItem } from "../types/state/todos";
+import { TodoEntity } from "../types/state/todos";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./TodoList.module.css";
 import { AppDispatch } from "../store";
@@ -9,7 +9,7 @@ import { setInitialTodos } from "../reducers/todosSlice";
 
 const TodoList: FC = () => {
   const dispatch: AppDispatch = useDispatch();
-  const todos: Array<TodoItem> = useSelector(selectTodosByVisibilityFilter);
+  const todos: Array<TodoEntity> = useSelector(selectTodosByVisibilityFilter);
 
   useEffect(() => {
     const todos = {
@@ -33,7 +33,7 @@ const TodoList: FC = () => {
   return (
     <ul className={styles.todoList}>
       {todos && todos.length
-        ? todos.map((todo: TodoItem, index: number) => {
+        ? todos.map((todo: TodoEntity, index: number) => {
             return <Todo key={`todo-${todo.id}`} todo={todo} />;
           })
         : "No todos, yay!"}

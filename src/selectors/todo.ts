@@ -1,16 +1,18 @@
 import { AppState } from "../store/index";
 import { VISIBILITY_FILTERS } from "../types/constants/visibilityFilterType";
-import { TodoState } from "../types/state/todos";
+import { TodoEntity } from "../types/state/todos";
 import { createSelector } from "@reduxjs/toolkit";
 import { selectVisibilityFilter } from "./visibilityFilter";
+import { Entities } from "../types/state/base";
 
-const selectEntityTodos = (state: AppState): TodoState => state.entities.todos;
+const selectTodoEntities = (state: AppState): Entities<TodoEntity> =>
+  state.entities.todos;
 const selectTodoIds = createSelector(
-  [selectEntityTodos],
+  [selectTodoEntities],
   (todos) => todos.allIds
 );
 const selectTodosById = createSelector(
-  [selectEntityTodos],
+  [selectTodoEntities],
   (todos) => todos.byId
 );
 

@@ -1,13 +1,13 @@
 import React from "react";
 import cx from "classnames";
 import { toggleTodo } from "../reducers/todosSlice";
-import { TodoItem } from "../types/state/todos";
+import { TodoEntity } from "../types/state/todos";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../store";
 import styles from "./Todo.module.css";
 
 type TodoProps = {
-  todo: TodoItem;
+  todo: TodoEntity;
 };
 
 const Todo: React.FC<TodoProps> = ({ todo }) => {

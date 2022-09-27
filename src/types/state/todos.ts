@@ -1,9 +1,4 @@
-export type TodoState = {
-  allIds: number[];
-  byId: { [key: number]: TodoItem };
-};
-
-export type TodoItem = {
+export type TodoEntity = {
   id: number;
   content: string;
   completed: boolean;
