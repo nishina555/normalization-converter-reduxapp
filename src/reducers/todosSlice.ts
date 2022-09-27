@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { buildEntities } from "../lib/entitiesBuilder";
 import { Entities } from "../types/state/base";
 import { TodoEntity } from "../types/state/todos";
 
@@ -12,7 +13,7 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     setInitialTodos(state, action) {
-      const { allIds, byId } = action.payload;
+      const { allIds, byId } = buildEntities<TodoEntity>(action.payload);
       state.allIds = allIds;
       state.byId = byId;
     },

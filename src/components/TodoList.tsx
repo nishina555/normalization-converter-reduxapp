@@ -12,21 +12,18 @@ const TodoList: FC = () => {
   const todos: Array<TodoEntity> = useSelector(selectTodosByVisibilityFilter);
 
   useEffect(() => {
-    const todos = {
-      allIds: [1, 2],
-      byId: {
-        1: {
-          id: 1,
-          content: "go somewhere",
-          completed: true,
-        },
-        2: {
-          id: 2,
-          content: "eat something",
-          completed: false,
-        },
+    const todos = [
+      {
+        id: 1,
+        content: "go somewhere",
+        completed: true,
       },
-    };
+      {
+        id: 2,
+        content: "eat something",
+        completed: false,
+      },
+    ];
     dispatch(setInitialTodos(todos));
   }, [dispatch]);
 
